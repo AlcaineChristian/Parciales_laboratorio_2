@@ -17,8 +17,8 @@ namespace Formularios
     public partial class FrmVenta : Form
     {
         Thread actualizarPantalla;
-        public event DelegadoDelivery delivery;
-        Random random;        
+        public event DelegadoDelivery pedido;
+        Random random;
         public FrmVenta()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace Formularios
                 Inventario.LeerXml();
                 ActualizarEnPreparacion();
                 ActualizarEntregados();
-                delivery += Pedido.PrintTicket;
+                pedido += Pedido.PrintTicket;
                 if (!actualizarPantalla.IsAlive)
                 {
                     actualizarPantalla.Start();
@@ -71,7 +71,7 @@ namespace Formularios
                     SQL.InstertarProducto(p1);
                     Inventario.Entregados.Enqueue(p1);
                     if (p1.Entrega == Pedido.EEntrega.Delivery)
-                        delivery.Invoke(p1);
+                        pedido.Invoke(p1);
                     ActualizarEnPreparacion();
                     ActualizarEntregados();
                     Thread.Sleep(random.Next(1000, 3000));
