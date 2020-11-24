@@ -29,30 +29,22 @@ namespace Formularios
         }
 
         private void FrmVenta_Load(object sender, EventArgs e)
-        {
-            //Inventario.Guardar();
+        {            
             try
             {
-
                 Inventario.Hardcodeo();
-
                 ActualizarEnPreparacion();
                 ActualizarEntregados();
-
                 delivery += Pedido.PrintTicket;
-
                 if (!actualizarPantalla.IsAlive)
                 {
                     actualizarPantalla.Start();
-
                 }
                 else
                 {
                     actualizarPantalla.Abort();
                     actualizarPantalla.Start();
                 }
-
-
             }
             catch (ExcepcionesArchivos exc)
             {
@@ -71,10 +63,7 @@ namespace Formularios
             frmAgregar.Show();
         }
 
-        private void LblVenta_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         private void ActualizarPedidos()
         {
 
@@ -96,7 +85,7 @@ namespace Formularios
                     ActualizarEnPreparacion();
                     ActualizarEntregados();
 
-                    Thread.Sleep(random.Next(2000, 4000));
+                    Thread.Sleep(random.Next(1000, 3000));
                 }
             }
         }

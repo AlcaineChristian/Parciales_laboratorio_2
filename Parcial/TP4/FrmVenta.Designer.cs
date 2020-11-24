@@ -72,7 +72,7 @@
             this.LblEntregados.Size = new System.Drawing.Size(61, 13);
             this.LblEntregados.TabIndex = 3;
             this.LblEntregados.Text = "Entregados";
-            this.LblEntregados.Click += new System.EventHandler(this.LblVenta_Click);
+            
             // 
             // BtnAgregarPedido
             // 
