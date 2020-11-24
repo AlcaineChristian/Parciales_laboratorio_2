@@ -66,25 +66,19 @@ namespace Formularios
         
         private void ActualizarPedidos()
         {
-
             while (true)
             {
                 ActualizarEnPreparacion();
-                //Thread.Sleep(4000);
-
                 if (Inventario.EnPreparacion.Count > 0)
                 {
                     Pedido p1;
                     p1 = Inventario.EnPreparacion.Dequeue();
                     SQL.InstertarProducto(p1);
                     Inventario.Entregados.Enqueue(p1);
-
                     if (p1.Entrega == Pedido.EEntrega.Delivery)
                         delivery.Invoke(p1);
-
                     ActualizarEnPreparacion();
                     ActualizarEntregados();
-
                     Thread.Sleep(random.Next(1000, 3000));
                 }
             }
@@ -95,13 +89,14 @@ namespace Formularios
             {
                 this.DgvListaProductos.BeginInvoke((MethodInvoker)delegate ()
                 {
-                    ActualizarDatagridviewEnPreparacion();
-
+                    this.DgvListaProductos.DataSource = null;
+                    this.DgvListaProductos.DataSource = Inventario.EnPreparacion.ToArray();
                 });
             }
             else
             {
-                ActualizarDatagridviewEnPreparacion();
+                this.DgvListaProductos.DataSource = null;
+                this.DgvListaProductos.DataSource = Inventario.EnPreparacion.ToArray(); 
             }
         }
         private void ActualizarEntregados()
@@ -110,32 +105,19 @@ namespace Formularios
             {
                 this.DgvListaVentas.BeginInvoke((MethodInvoker)delegate ()
                 {
-                    ActualizarDatagridviewEntregados();
+                    this.DgvListaVentas.DataSource = null;
+                    this.DgvListaVentas.DataSource = Inventario.Entregados.ToArray();
                 });
             }
             else
             {
-                ActualizarDatagridviewEntregados();
+                this.DgvListaVentas.DataSource = null;
+                this.DgvListaVentas.DataSource = Inventario.Entregados.ToArray();
             }
         }
 
-        /// <summary>
-        /// Actualiza datagridview
-        /// </summary>
-        private void ActualizarDatagridviewEnPreparacion()
-        {
-            this.DgvListaProductos.DataSource = null;
-            this.DgvListaProductos.DataSource = Inventario.EnPreparacion.ToArray();
-        }
-
-        /// <summary>
-        /// Actualiza datagridview
-        /// </summary>
-        private void ActualizarDatagridviewEntregados()
-        {
-            this.DgvListaVentas.DataSource = null;
-            this.DgvListaVentas.DataSource = Inventario.Entregados.ToArray();
-        }
+        
+        
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
