@@ -19,6 +19,7 @@ namespace Formularios
         Thread actualizarPantalla;
         public event DelegadoDelivery delivery;
         Random random;
+        
         public FrmVenta()
         {
             InitializeComponent();
@@ -80,7 +81,7 @@ namespace Formularios
             while (true)
             {
                 ActualizarEnPreparacion();
-                Thread.Sleep(4000);
+                //Thread.Sleep(4000);
 
                 if (Inventario.EnPreparacion.Count > 0)
                 {
@@ -99,7 +100,7 @@ namespace Formularios
                 }
             }
         }
-        private void ActualizarEnPreparacion()
+        public void ActualizarEnPreparacion()
         {
             if (this.DgvListaProductos.InvokeRequired)
             {

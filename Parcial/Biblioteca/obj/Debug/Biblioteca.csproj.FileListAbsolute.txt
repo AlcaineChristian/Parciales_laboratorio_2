@@ -9,3 +9,14 @@ C:\Users\Usuario\Desktop\Tp4\TP4\Biblioteca\bin\Debug\Exepciones.pdb
 C:\Users\Usuario\Desktop\Tp4\TP4\Biblioteca\obj\Debug\Biblioteca.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Tp4\TP4\Biblioteca\bin\Debug\Archivos.dll
 C:\Users\Usuario\Desktop\Tp4\TP4\Biblioteca\bin\Debug\Archivos.pdb
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\bin\Debug\Biblioteca.dll
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\bin\Debug\Archivos.dll
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\bin\Debug\Exepciones.dll
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\bin\Debug\Archivos.pdb
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\bin\Debug\Exepciones.pdb
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\obj\Debug\Biblioteca.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\obj\Debug\Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\obj\Debug\Biblioteca.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\Usuario\Desktop\Tp4\Parcial\Biblioteca\obj\Debug\Biblioteca.pdb

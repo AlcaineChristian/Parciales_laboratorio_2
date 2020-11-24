@@ -9,6 +9,7 @@ using Archivos;
 
 namespace Biblioteca
 {
+    
     public class Pedido
     {
         ETipo tipo;
@@ -30,11 +31,11 @@ namespace Biblioteca
         {
 
         }
-        public Pedido(EEntrega entrega, ETipo tipo)
+        public Pedido(EEntrega entrega, ETipo tipo,int id)
         {
             this.tipo = tipo;
             this.entrega = entrega;
-            //this.nroPedido = nroPedido;
+            this.nroPedido = id;
         }
         
         public int NroPedido

@@ -6,13 +6,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using Archivos;
 
+
 namespace Biblioteca
 {
     public static class Inventario
     {
         private static Queue<Pedido> enPreparacion;
         private static Queue<Pedido> entregados;
-        //public int id;
+        
 
         static Inventario()
         {
@@ -38,15 +39,15 @@ namespace Biblioteca
                 enPreparacion.Enqueue(pedido);
             }
         }
-        public static bool Guardar()
+        public static bool Guardar(int id)
         {
             string path = String.Concat(AppDomain.CurrentDomain.BaseDirectory, "Pedidos.xml");
             Xml<List<Pedido>> auxPedidos = new Xml<List<Pedido>>();
 
             List<Pedido> pedidos = new List<Pedido>();
-            pedidos.Add(new Pedido(Pedido.EEntrega.Mesa,Pedido.ETipo.Milanesa));
+            pedidos.Add(new Pedido(Pedido.EEntrega.Mesa,Pedido.ETipo.Milanesa,id));
             Thread.Sleep(1000);
-            pedidos.Add(new Pedido(Pedido.EEntrega.Mesa, Pedido.ETipo.Milanesa));
+            pedidos.Add(new Pedido(Pedido.EEntrega.Mesa, Pedido.ETipo.Milanesa,id));
             
 
             return auxPedidos.Guardar(path, pedidos);
