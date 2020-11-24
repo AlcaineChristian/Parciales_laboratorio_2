@@ -18,8 +18,7 @@ namespace Formularios
     {
         Thread actualizarPantalla;
         public event DelegadoDelivery delivery;
-        Random random;
-        
+        Random random;        
         public FrmVenta()
         {
             InitializeComponent();
@@ -27,12 +26,11 @@ namespace Formularios
             random = new Random();
             SQL sql = new SQL();
         }
-
         private void FrmVenta_Load(object sender, EventArgs e)
         {            
             try
             {
-                Inventario.Hardcodeo();
+                Inventario.LeerXml();
                 ActualizarEnPreparacion();
                 ActualizarEntregados();
                 delivery += Pedido.PrintTicket;
@@ -56,14 +54,11 @@ namespace Formularios
                 MessageBox.Show(exc.Message);
             }
         }
-
         private void BtnAgregarProducto_Click(object sender, EventArgs e)
         {
             FrmAgregarProducto frmAgregar = new FrmAgregarProducto();
             frmAgregar.Show();
-        }
-
-        
+        }       
         private void ActualizarPedidos()
         {
             while (true)
@@ -115,10 +110,6 @@ namespace Formularios
                 this.DgvListaVentas.DataSource = Inventario.Entregados.ToArray();
             }
         }
-
-        
-        
-
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             actualizarPantalla.Abort();
